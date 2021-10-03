@@ -20,6 +20,7 @@ public class AddressBook {
         }
         boolean status = true;
         do {
+
             System.out.println("Enter the number according to to requirment");
             System.out.println("Enter 1 to Add");
             System.out.println("Enter 2 to Edit");
