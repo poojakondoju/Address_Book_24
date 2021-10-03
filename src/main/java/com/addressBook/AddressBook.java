@@ -1,9 +1,6 @@
 package com.addressBook;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class AddressBook {
     public List<Contacts> list = new ArrayList<>();
@@ -21,10 +18,8 @@ public class AddressBook {
         boolean status = true;
         do {
 
-            System.out.println("Enter the number according to to requirment");
-            System.out.println("Enter 1 to Add");
-            System.out.println("Enter 2 to Edit");
-            System.out.println("Enter 3 to Delete");
+            System.out.println("Choose Operation you want to do");
+            System.out.println("1. Add\t2.Edit\t3.Delete\t4.sortCity");
             switch (scan.nextInt()) {
                 case 1:
                     add();
@@ -35,6 +30,8 @@ public class AddressBook {
                 case 3:
                     delete();
                     break;
+                case 4:
+                    sortCity();
                 default:
                     status = false;
             }
@@ -144,6 +141,10 @@ public class AddressBook {
         }
     }
 
+    public void sortCity() {
+        Collections.sort(list, Sort.compareCity);
+    }
+
     @Override
     public String toString() {
         return "AddressBook{" +
@@ -151,3 +152,4 @@ public class AddressBook {
                 '}';
     }
 }
+
